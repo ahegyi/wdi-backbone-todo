@@ -16,15 +16,34 @@
 
     <header>
       <h1>Backbone Todo App</h1>
-      <input type="text" id="new-todo">
-      <button id="button">Add</button>
+      <form id="todoForm">
+        <input type="text" id="new-todo">
+        <button id="button">Add</button>
+      </form>
     </header>
 
     <section id="main">
+      <h2 id="todo-title"></h2>
       <ul id="todo-list"></ul>
+      <h2 id="completed-title"></h2>
+      <ul id="completed-list"></ul>
+      <div id="counter"></div>
     </section>
 
   </div>
+
+  <script type="text/template" id="list-item-template">
+    <span>
+      <input type='checkbox' class='checkbox'<%= complete ? 'checked="checked"' : '' %>>
+      <%= title %>
+    </span>
+  </script>
+  <script type="text/template" id="counter-template">
+    <div class="todo-count">
+      <%= completed %> completed.
+      <%= incomplete %> not completed.
+    </div>
+  </script>
 
 </body>
 </html>
